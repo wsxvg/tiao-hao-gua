@@ -3,7 +3,6 @@
  */
 
 import { defineComponent, ref } from 'vue';
-import cn from 'classnames';
 import guideImg from '@/assets/guide.jpg';
 import styles from './index.module.less';
 
