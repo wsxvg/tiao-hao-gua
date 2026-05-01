@@ -1,0 +1,113 @@
+.root {
+  width: 85vw;
+  margin: 0 auto;
+
+  .toggle {
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+    padding: 0.5em 0;
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  .content {
+    animation: slideDown 0.3s ease;
+  }
+
+  .summary {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    gap: 0.5em;
+
+    .tip {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      font-size: 0.75em;
+      color: #666;
+      background: #f8f8f8;
+      padding: 0.4em 0.6em;
+      border-radius: 8px;
+
+      .icon {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .guide-img-wrap {
+    position: relative;
+    margin-top: 0.5em;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .guide-img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .zoom-hint {
+      position: absolute;
+      bottom: 0.5em;
+      right: 0.5em;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.7em;
+      padding: 0.2em 0.5em;
+      border-radius: 4px;
+    }
+  }
+}
+
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+
+  img {
+    max-width: 95vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .close-hint {
+    color: #fff;
+    font-size: 0.85em;
+    margin-top: 1em;
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
