@@ -1,0 +1,16 @@
+# Netlify configuration for pick-gua
+[build]
+  # Build command - uses the prod mode build
+  command = "npm run build:prod"
+  # Publish directory - Vite's default output
+  publish = "dist"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "20"
+
+# Redirects for SPA routing (if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
