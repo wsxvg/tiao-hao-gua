@@ -12,7 +12,9 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'development' ? '' : '/tiao-hao-gua/',
+    // Netlify 部署使用根路径
+    // GitHub Pages 部署使用 '/tiao-hao-gua/'
+    base: mode === 'development' ? '' : '/',
     server: {
       host: '0.0.0.0',
       https: {} as any
@@ -33,4 +35,3 @@ export default defineConfig(({ mode }) => {
     }
   };
 });
-
